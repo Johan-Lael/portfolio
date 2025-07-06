@@ -18,7 +18,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
     toast({
       title: "Message Sent!",
       description: "Thank you for your message. I'll get back to you soon!",
@@ -61,8 +60,18 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      id="contact" 
+      className="py-20 relative"
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-black/70 dark:bg-black/80"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +82,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
             Let's Connect
           </h2>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Ready to collaborate on your next project? Let's discuss how we can bring your ideas to life.
           </p>
         </motion.div>
@@ -86,12 +95,12 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="p-8 bg-white/5 backdrop-blur-xl border-white/10">
+            <Card className="p-8 bg-white/10 backdrop-blur-xl border-white/20">
               <h3 className="text-2xl font-semibold text-white mb-6">Send a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-white/80 mb-2 font-medium">
+                  <label htmlFor="name" className="block text-white/90 mb-2 font-medium">
                     Name
                   </label>
                   <Input
@@ -100,13 +109,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-blue-400"
+                    className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-400 focus:bg-white/15"
                     placeholder="Your name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-white/80 mb-2 font-medium">
+                  <label htmlFor="email" className="block text-white/90 mb-2 font-medium">
                     Email
                   </label>
                   <Input
@@ -116,13 +125,13 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-blue-400"
+                    className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-400 focus:bg-white/15"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-white/80 mb-2 font-medium">
+                  <label htmlFor="message" className="block text-white/90 mb-2 font-medium">
                     Message
                   </label>
                   <Textarea
@@ -132,7 +141,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="bg-white/5 border-white/20 text-white placeholder:text-white/50 focus:border-blue-400 resize-none"
+                    className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-400 focus:bg-white/15 resize-none"
                     placeholder="Tell me about your project or say hello..."
                   />
                 </div>
@@ -153,11 +162,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-6"
           >
-            <Card className="p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-xl border-white/10">
+            <Card className="p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-xl border-white/20 h-full">
               <h3 className="text-2xl font-semibold text-white mb-6">Get in Touch</h3>
-              <p className="text-white/70 mb-8 leading-relaxed">
+              <p className="text-white/80 mb-8 leading-relaxed">
                 I'm always excited to connect with fellow developers, potential collaborators, 
                 and anyone interested in discussing technology and innovation. Feel free to reach out!
               </p>
@@ -175,55 +183,35 @@ const Contact = () => {
                       href={contact.href}
                       target={contact.href.startsWith('http') ? '_blank' : undefined}
                       rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="flex items-center space-x-4 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-all duration-300 group"
+                      className="flex items-center space-x-4 p-4 bg-white/10 rounded-lg hover:bg-white/15 transition-all duration-300 group"
                     >
                       <div className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover:scale-110 transition-transform duration-300">
                         <contact.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <p className="text-white/90 font-medium">{contact.label}</p>
-                        <p className="text-white/70 text-sm">{contact.value}</p>
+                        <p className="text-white/95 font-medium">{contact.label}</p>
+                        <p className="text-white/75 text-sm">{contact.value}</p>
                       </div>
                     </a>
                   </motion.div>
                 ))}
               </div>
-            </Card>
 
-            {/* Credly Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <Card className="p-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 backdrop-blur-xl border-yellow-400/20 text-center">
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center">
-                    <span className="text-xl">🏆</span>
-                  </div>
-                </div>
-                <h4 className="text-lg font-semibold text-white mb-2">
-                  Professional Credentials
-                </h4>
-                <p className="text-yellow-200 text-sm mb-3">
-                  View my verified achievements and certifications
-                </p>
+              <div className="mt-8 pt-6 border-t border-white/20">
                 <Button
                   asChild
-                  variant="outline"
-                  className="border-yellow-400/50 text-yellow-200 hover:bg-yellow-400/10"
+                  className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-semibold"
                 >
                   <a
-                    href="https://credly.com/users/johan-lael-kapnang-ketcheuzeu"
+                    href="https://www.credly.com/users/johan-lael-kapnang-ketcheuzeu"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View Credly Profile
+                    View AWS Badge on Credly
                   </a>
                 </Button>
-              </Card>
-            </motion.div>
+              </div>
+            </Card>
           </motion.div>
         </div>
       </div>

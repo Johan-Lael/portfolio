@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import ThemeToggle from './ThemeToggle';
 
 interface NavigationProps {
   activeSection: string;
@@ -12,9 +13,9 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
     { id: 'portfolio', label: 'Portfolio' },
-    { id: 'experience', label: 'Experience' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -33,7 +34,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
       className="fixed top-0 left-0 right-0 z-50 p-4"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl px-6 py-4 shadow-2xl">
+        <div className="backdrop-blur-xl bg-white/10 dark:bg-white/10 border border-white/20 dark:border-white/20 rounded-2xl px-6 py-4 shadow-2xl">
           <div className="flex items-center justify-between">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -50,8 +51,8 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
                   onClick={() => scrollToSection(item.id)}
                   className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                     activeSection === item.id
-                      ? 'bg-white/20 text-white'
-                      : 'text-white/70 hover:text-white hover:bg-white/10'
+                      ? 'bg-white/20 text-white dark:text-white'
+                      : 'text-white/70 dark:text-white/70 hover:text-white dark:hover:text-white hover:bg-white/10 dark:hover:bg-white/10'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -59,19 +60,23 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
                   {item.label}
                 </motion.button>
               ))}
+              <ThemeToggle />
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <div className="w-6 h-6 flex flex-col justify-around">
-                <span className={`block h-0.5 w-6 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-2.5' : ''}`} />
-                <span className={`block h-0.5 w-6 bg-white transition-all ${isOpen ? 'opacity-0' : ''}`} />
-                <span className={`block h-0.5 w-6 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
-              </div>
-            </button>
+            <div className="md:hidden flex items-center space-x-4">
+              <ThemeToggle />
+              <button
+                className="p-2"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <div className="w-6 h-6 flex flex-col justify-around">
+                  <span className={`block h-0.5 w-6 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-2.5' : ''}`} />
+                  <span className={`block h-0.5 w-6 bg-white transition-all ${isOpen ? 'opacity-0' : ''}`} />
+                  <span className={`block h-0.5 w-6 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
+                </div>
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}

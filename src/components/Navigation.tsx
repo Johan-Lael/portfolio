@@ -36,12 +36,13 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
       <div className="max-w-7xl mx-auto">
         <div className="backdrop-blur-xl bg-white/10 dark:bg-white/10 border border-white/20 dark:border-white/20 rounded-2xl px-6 py-4 shadow-2xl">
           <div className="flex items-center justify-between">
-            <motion.div
+            <motion.button
+              onClick={() => scrollToSection('home')}
               whileHover={{ scale: 1.05 }}
-              className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+              className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-300 transition-all duration-300"
             >
               Johan Lael
-            </motion.div>
+            </motion.button>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">

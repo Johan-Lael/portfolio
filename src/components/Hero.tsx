@@ -14,7 +14,15 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* AI-themed background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{
+          backgroundImage: `url('/lovable-uploads/98310fb8-52ee-4759-b175-20399445e401.png')`
+        }}
+      />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           {/* Profile Image */}
           <motion.div
@@ -68,19 +76,13 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - View Projects button removed */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-wrap gap-4 justify-center mt-12"
           >
-            <Button
-              onClick={() => scrollToSection('portfolio')}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
-            >
-              View Projects
-            </Button>
             <Button
               onClick={() => scrollToSection('contact')}
               variant="outline"

@@ -16,9 +16,9 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
-      {/* AI-themed background image without purple overlay */}
+      {/* AI-themed background image without any overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{
           backgroundImage: `url('/lovable-uploads/98310fb8-52ee-4759-b175-20399445e401.png')`
         }} 

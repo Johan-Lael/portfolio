@@ -31,7 +31,7 @@ const Hero = () => {
           delay: 0.2
         }} className="space-y-6">
             {/* Main Content with glass card */}
-            <div className="space-y-6 p-8 bg-white/10 dark:bg-white/10 light:bg-white/20 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl my-[20px]">
+            <div className="space-y-6 p-8 bg-white/10 dark:bg-white/10 light:bg-white/20 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl my-[58px]">
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent leading-tight">
                 Johan Lael
                 <br />

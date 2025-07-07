@@ -115,7 +115,7 @@ const Hero = () => {
       }} transition={{
         delay: 0.8
       }} className="max-w-4xl mx-auto mt-12 text-center">
-          <blockquote className="text-lg md:text-xl italic text-white/95 border-l-4 border-blue-400 pl-6 py-4 bg-white/5 backdrop-blur-sm rounded-r-lg border border-white/10">
+          <blockquote className="text-lg md:text-xl italic text-white/95 border-l-4 border-blue-400 pl-6 py-4 bg-white/5 backdrop-blur-sm rounded-r-lg border border-white/10 my-[4px]">
             "Artificial Intelligence is not just a tool — it's the reflection of our deepest curiosity, 
             the extension of our imagination, and the spark that will illuminate the future we dare to dream."
             <footer className="mt-2 text-blue-300 not-italic">- Johan Lael</footer>

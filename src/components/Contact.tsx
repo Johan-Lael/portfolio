@@ -82,7 +82,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
             Let's Connect
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 dark:text-white/90 light:text-gray-800 max-w-2xl mx-auto">
             Ready to collaborate on your next project? Let's discuss how we can bring your ideas to life.
           </p>
         </motion.div>
@@ -95,12 +95,12 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="p-8 bg-white/10 backdrop-blur-xl border-white/20">
-              <h3 className="text-2xl font-semibold text-white mb-6">Send a Message</h3>
+            <Card className="p-8 bg-white/10 dark:bg-white/10 light:bg-white backdrop-blur-xl border-white/20">
+              <h3 className="text-2xl font-semibold text-white dark:text-white light:text-gray-900 mb-6">Send a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-white/90 mb-2 font-medium">
+                  <label htmlFor="name" className="block text-white/90 dark:text-white/90 light:text-gray-700 mb-2 font-medium">
                     Name
                   </label>
                   <Input
@@ -109,13 +109,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-400 focus:bg-white/15"
+                    className="bg-white/10 dark:bg-white/10 light:bg-white border-white/30 dark:border-white/30 light:border-gray-300 text-white dark:text-white light:text-gray-900 placeholder:text-white/60 dark:placeholder:text-white/60 light:placeholder:text-gray-400 focus:border-blue-400 focus:bg-white/15 dark:focus:bg-white/15 light:focus:bg-white"
                     placeholder="Your name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-white/90 mb-2 font-medium">
+                  <label htmlFor="email" className="block text-white/90 dark:text-white/90 light:text-gray-700 mb-2 font-medium">
                     Email
                   </label>
                   <Input
@@ -125,13 +125,13 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-400 focus:bg-white/15"
+                    className="bg-white/10 dark:bg-white/10 light:bg-white border-white/30 dark:border-white/30 light:border-gray-300 text-white dark:text-white light:text-gray-900 placeholder:text-white/60 dark:placeholder:text-white/60 light:placeholder:text-gray-400 focus:border-blue-400 focus:bg-white/15 dark:focus:bg-white/15 light:focus:bg-white"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-white/90 mb-2 font-medium">
+                  <label htmlFor="message" className="block text-white/90 dark:text-white/90 light:text-gray-700 mb-2 font-medium">
                     Message
                   </label>
                   <Textarea
@@ -141,7 +141,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-blue-400 focus:bg-white/15 resize-none"
+                    className="bg-white/10 dark:bg-white/10 light:bg-white border-white/30 dark:border-white/30 light:border-gray-300 text-white dark:text-white light:text-gray-900 placeholder:text-white/60 dark:placeholder:text-white/60 light:placeholder:text-gray-400 focus:border-blue-400 focus:bg-white/15 dark:focus:bg-white/15 light:focus:bg-white resize-none"
                     placeholder="Tell me about your project or say hello..."
                   />
                 </div>
@@ -163,9 +163,9 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className="p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 backdrop-blur-xl border-white/20 h-full">
-              <h3 className="text-2xl font-semibold text-white mb-6">Get in Touch</h3>
-              <p className="text-white/80 mb-8 leading-relaxed">
+            <Card className="p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:bg-gradient-to-r dark:from-blue-500/10 dark:to-purple-500/10 light:bg-white backdrop-blur-xl border-white/20 h-full">
+              <h3 className="text-2xl font-semibold text-white dark:text-white light:text-gray-900 mb-6">Get in Touch</h3>
+              <p className="text-white/80 dark:text-white/80 light:text-gray-600 mb-8 leading-relaxed">
                 I'm always excited to connect with fellow developers, potential collaborators, 
                 and anyone interested in discussing technology and innovation. Feel free to reach out!
               </p>
@@ -183,33 +183,18 @@ const Contact = () => {
                       href={contact.href}
                       target={contact.href.startsWith('http') ? '_blank' : undefined}
                       rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="flex items-center space-x-4 p-4 bg-white/10 rounded-lg hover:bg-white/15 transition-all duration-300 group"
+                      className="flex items-center space-x-4 p-4 bg-white/10 dark:bg-white/10 light:bg-gray-50 rounded-lg hover:bg-white/15 dark:hover:bg-white/15 light:hover:bg-gray-100 transition-all duration-300 group"
                     >
                       <div className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover:scale-110 transition-transform duration-300">
                         <contact.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <p className="text-white/95 font-medium">{contact.label}</p>
-                        <p className="text-white/75 text-sm">{contact.value}</p>
+                        <p className="text-white/95 dark:text-white/95 light:text-gray-800 font-medium">{contact.label}</p>
+                        <p className="text-white/75 dark:text-white/75 light:text-gray-600 text-sm">{contact.value}</p>
                       </div>
                     </a>
                   </motion.div>
                 ))}
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-white/20">
-                <Button
-                  asChild
-                  className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-semibold"
-                >
-                  <a
-                    href="https://www.credly.com/users/johan-lael-kapnang-ketcheuzeu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View AWS Badge on Credly
-                  </a>
-                </Button>
               </div>
             </Card>
           </motion.div>

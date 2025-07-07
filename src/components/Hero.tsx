@@ -16,36 +16,38 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
-      {/* AI-themed background image without any overlay */}
+      {/* Clean AI/tech background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{
-          backgroundImage: `url('/lovable-uploads/98310fb8-52ee-4759-b175-20399445e401.png')`
+          backgroundImage: `url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')`
         }} 
       />
+      {/* Glass overlay for glassmorphism effect */}
+      <div className="absolute inset-0 bg-black/40 dark:bg-black/50"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          {/* Profile Image */}
+          {/* Profile Image with glass effect */}
           <motion.div 
             initial={{ scale: 0, opacity: 0 }} 
             animate={{ scale: 1, opacity: 1 }} 
             transition={{ duration: 0.8, delay: 0.2 }} 
             className="mb-8"
           >
-            <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center text-6xl font-bold text-white">
+            <div className="w-48 h-48 mx-auto rounded-full bg-white/10 dark:bg-white/10 light:bg-white/20 backdrop-blur-xl border-2 border-white/20 p-1 shadow-2xl">
+              <div className="w-full h-full rounded-full bg-gradient-to-r from-blue-500/80 to-purple-600/80 backdrop-blur-sm flex items-center justify-center text-6xl font-bold text-white shadow-inner">
                 JL
               </div>
             </div>
           </motion.div>
 
-          {/* Main Content */}
+          {/* Main Content with glass card */}
           <motion.div 
             initial={{ y: 50, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }} 
             transition={{ duration: 0.8, delay: 0.4 }} 
-            className="space-y-6"
+            className="space-y-6 p-8 bg-white/10 dark:bg-white/10 light:bg-white/20 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl"
           >
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent leading-tight">
               Johan Lael
@@ -57,20 +59,20 @@ const Hero = () => {
               Aspiring Computer & AI Engineer
             </p>
 
-            <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
               Exploring the frontiers of AI and Cloud Innovation
               <br />
               <span className="text-purple-200">Texas, USA</span>
             </p>
 
-            {/* Quote */}
+            {/* Quote with enhanced glass effect */}
             <motion.div 
               initial={{ opacity: 0 }} 
               animate={{ opacity: 1 }} 
               transition={{ delay: 0.8 }} 
               className="max-w-4xl mx-auto mt-8"
             >
-              <blockquote className="text-lg md:text-xl italic text-white/90 border-l-4 border-blue-400 pl-6 py-4 bg-white/5 backdrop-blur-sm rounded-r-lg">
+              <blockquote className="text-lg md:text-xl italic text-white/95 border-l-4 border-blue-400 pl-6 py-4 bg-white/5 backdrop-blur-sm rounded-r-lg border border-white/10">
                 "Artificial Intelligence is not just a tool — it's the reflection of our deepest curiosity, 
                 the extension of our imagination, and the spark that will illuminate the future we dare to dream."
                 <footer className="mt-2 text-blue-300 not-italic">- Johan Lael</footer>
@@ -78,7 +80,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with glass effect */}
           <motion.div 
             initial={{ y: 30, opacity: 0 }} 
             animate={{ y: 0, opacity: 1 }} 
@@ -88,19 +90,19 @@ const Hero = () => {
             <Button 
               onClick={() => scrollToSection('contact')} 
               variant="outline" 
-              className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-full text-lg font-semibold backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-white/30 text-white hover:bg-white/20 px-8 py-3 rounded-full text-lg font-semibold backdrop-blur-xl bg-white/10 transition-all duration-300 transform hover:scale-105"
             >
               Contact Me
             </Button>
             <Button 
               variant="outline" 
-              className="border-2 border-green-400/50 text-green-400 hover:bg-green-400/10 px-8 py-3 rounded-full text-lg font-semibold backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-green-400/50 text-green-400 hover:bg-green-400/20 px-8 py-3 rounded-full text-lg font-semibold backdrop-blur-xl bg-white/10 transition-all duration-300 transform hover:scale-105"
             >
               Download Resume
             </Button>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social Links with glass effect */}
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
@@ -111,7 +113,7 @@ const Hero = () => {
               href="https://github.com/Johan-Lael" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300" 
+              className="p-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg" 
               whileHover={{ scale: 1.1, rotate: 5 }} 
               whileTap={{ scale: 0.9 }}
             >
@@ -121,7 +123,7 @@ const Hero = () => {
               href="https://linkedin.com/in/johan-lael-kapnang" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300" 
+              className="p-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg" 
               whileHover={{ scale: 1.1, rotate: -5 }} 
               whileTap={{ scale: 0.9 }}
             >
@@ -129,7 +131,7 @@ const Hero = () => {
             </motion.a>
             <motion.a 
               href="mailto:johan.kapnang@example.com" 
-              className="p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300" 
+              className="p-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg" 
               whileHover={{ scale: 1.1, rotate: 5 }} 
               whileTap={{ scale: 0.9 }}
             >
@@ -137,7 +139,7 @@ const Hero = () => {
             </motion.a>
           </motion.div>
 
-          {/* Scroll Indicator */}
+          {/* Scroll Indicator with glass effect */}
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
@@ -146,7 +148,7 @@ const Hero = () => {
           >
             <motion.button 
               onClick={() => scrollToSection('about')} 
-              className="p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300" 
+              className="p-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg" 
               animate={{ y: [0, 10, 0] }} 
               transition={{ duration: 2, repeat: Infinity }}
             >

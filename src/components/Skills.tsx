@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Cloud, Code, Settings, Users } from 'lucide-react';
+import { Cloud, Code, Settings, Users, ExternalLink } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
@@ -189,20 +189,30 @@ const Skills = () => {
         >
           <h3 className="text-3xl font-bold text-white dark:text-white light:text-gray-900 mb-8">Certifications</h3>
           
-          <Card className="max-w-sm mx-auto p-8 bg-gradient-to-b from-yellow-500/10 to-orange-500/10 dark:bg-gradient-to-b dark:from-yellow-500/10 dark:to-orange-500/10 light:bg-white backdrop-blur-xl border-yellow-400/30 h-auto">
-            <div className="flex flex-col items-center space-y-6">
-              <div className="w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center">
-                <span className="text-3xl">🏆</span>
+          <Card className="w-full p-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 dark:bg-gradient-to-r dark:from-yellow-500/10 dark:to-orange-500/10 light:bg-white backdrop-blur-xl border-yellow-400/30 h-32">
+            <div className="flex items-center justify-between h-full">
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">🏆</span>
+                </div>
+                <div className="text-left space-y-2">
+                  <h4 className="text-xl font-bold text-white dark:text-white light:text-gray-900">
+                    AWS Certified AI Practitioner
+                  </h4>
+                  <p className="text-yellow-200 dark:text-yellow-200 light:text-yellow-600 font-medium">Achieved June 2025</p>
+                  <p className="text-white/80 dark:text-white/80 light:text-gray-600 text-sm">
+                    Advanced certification in cloud computing and AI services
+                  </p>
+                </div>
               </div>
-              <div className="text-center space-y-3">
-                <h4 className="text-xl font-bold text-white dark:text-white light:text-gray-900">
-                  AWS Certified AI Practitioner
-                </h4>
-                <p className="text-yellow-200 dark:text-yellow-200 light:text-yellow-600 font-medium">Achieved June 2025</p>
-                <p className="text-white/80 dark:text-white/80 light:text-gray-600 text-sm">
-                  Advanced certification in cloud computing and AI services
-                </p>
-              </div>
+              <Button 
+                variant="outline" 
+                className="border-2 border-yellow-400/50 text-yellow-400 hover:bg-yellow-400/20 px-4 py-2 rounded-lg font-semibold backdrop-blur-xl bg-white/10 transition-all duration-300 flex items-center space-x-2"
+                onClick={() => window.open('#', '_blank')}
+              >
+                <span>View Badge on Credly</span>
+                <ExternalLink className="w-4 h-4" />
+              </Button>
             </div>
           </Card>
         </motion.div>

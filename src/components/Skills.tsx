@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
@@ -23,9 +22,9 @@ const Skills = () => {
     { 
       category: 'Programming', 
       skills: [
-        { name: 'Java', proficiency: 95 },
+        { name: 'Java', proficiency: 70 },
         { name: 'C', proficiency: 90 },
-        { name: 'Python', proficiency: 90 },
+        { name: 'Python', proficiency: 70 },
         { name: 'HTML', proficiency: 95 },
         { name: 'CSS', proficiency: 90 }
       ], 
@@ -36,7 +35,7 @@ const Skills = () => {
       category: 'Tools', 
       skills: [
         { name: 'AWS Cloud', proficiency: 85 },
-        { name: 'SolidWorks', proficiency: 75 },
+        { name: 'SolidWorks', proficiency: 90 },
         { name: 'MS Office Suite', proficiency: 90 },
         { name: 'Adobe Premiere Pro', proficiency: 80 }
       ], 
@@ -59,8 +58,8 @@ const Skills = () => {
   ];
 
   const languages = [
-    { name: 'English', proficiency: 100, flag: '🇺🇸' },
-    { name: 'French', proficiency: 90, flag: '🇫🇷' }
+    { name: 'English', proficiency: 95, flag: '🇺🇸' },
+    { name: 'French', proficiency: 95, flag: '🇫🇷' }
   ];
 
   return (

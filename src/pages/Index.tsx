@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
@@ -10,6 +9,7 @@ import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import { ThemeProvider } from '@/contexts/ThemeContext';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -50,6 +50,8 @@ const Index = () => {
           <Portfolio />
           <Contact />
         </main>
+        
+        <Footer />
       </div>
     </ThemeProvider>
   );

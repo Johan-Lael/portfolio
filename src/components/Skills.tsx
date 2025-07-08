@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
@@ -90,7 +89,6 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        {/* Skills Categories */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {skillCategories.map((category, index) => (
             <motion.div
@@ -138,7 +136,6 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Language Proficiency */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -179,7 +176,6 @@ const Skills = () => {
           </div>
         </motion.div>
 
-        {/* Certifications Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -208,7 +204,7 @@ const Skills = () => {
               <Button 
                 variant="outline" 
                 className="border-2 border-yellow-400/50 text-yellow-400 hover:bg-yellow-400/20 px-4 py-2 rounded-lg font-semibold backdrop-blur-xl bg-white/10 transition-all duration-300 flex items-center space-x-2"
-                onClick={() => window.open('#', '_blank')}
+                onClick={() => window.open('https://www.credly.com/users/johan-lael-kapnang-ketcheuzeu', '_blank')}
               >
                 <span>View Badge on Credly</span>
                 <ExternalLink className="w-4 h-4" />

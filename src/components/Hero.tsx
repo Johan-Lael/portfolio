@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
@@ -116,36 +117,38 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Quote with enhanced glass effect - centered below with reduced size */}
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ delay: 0.8 }} 
-          className="max-w-lg mx-auto mt-12 text-center"
-        >
-          <blockquote className="text-xs md:text-sm italic text-white/95 border-l-4 border-blue-400 pl-4 py-2 bg-white/5 backdrop-blur-sm rounded-r-lg border border-white/10">
-            "Artificial Intelligence is not just a tool — it's the reflection of our deepest curiosity, 
-            the extension of our imagination, and the spark that will illuminate the future we dare to dream."
-            <footer className="mt-2 text-blue-300 not-italic text-xs">- Johan Lael</footer>
-          </blockquote>
-        </motion.div>
-
-        {/* Scroll Indicator with glass effect */}
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ delay: 1.2 }} 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.button 
-            onClick={() => scrollToSection('about')} 
-            className="p-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg" 
-            animate={{ y: [0, 10, 0] }} 
-            transition={{ duration: 2, repeat: Infinity }}
+        {/* Quote and Scroll Indicator section - positioned side by side */}
+        <div className="flex items-center justify-center gap-8 mt-12">
+          {/* Scroll Indicator with glass effect */}
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ delay: 1.2 }}
           >
-            <ArrowDown className="w-6 h-6" />
-          </motion.button>
-        </motion.div>
+            <motion.button 
+              onClick={() => scrollToSection('about')} 
+              className="p-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg" 
+              animate={{ y: [0, 10, 0] }} 
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <ArrowDown className="w-6 h-6" />
+            </motion.button>
+          </motion.div>
+
+          {/* Quote with enhanced glass effect */}
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ delay: 0.8 }} 
+            className="max-w-lg text-center"
+          >
+            <blockquote className="text-xs md:text-sm italic text-white/95 border-l-4 border-blue-400 pl-4 py-2 bg-white/5 backdrop-blur-sm rounded-r-lg border border-white/10">
+              "Artificial Intelligence is not just a tool — it's the reflection of our deepest curiosity, 
+              the extension of our imagination, and the spark that will illuminate the future we dare to dream."
+              <footer className="mt-2 text-blue-300 not-italic text-xs">- Johan Lael</footer>
+            </blockquote>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -74,7 +74,7 @@ const Skills = () => {
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="absolute inset-0 bg-black/70 dark:bg-black/80"></div>
+      <div className="absolute inset-0 bg-black/70 dark:bg-black/80 light:bg-white/90"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -100,7 +100,7 @@ const Skills = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="p-6 bg-white/10 dark:bg-white/10 light:bg-white backdrop-blur-xl border-white/20 hover:bg-white/15 dark:hover:bg-white/15 light:hover:bg-gray-50 transition-all duration-300 h-full">
+              <Card className="p-6 bg-white/10 dark:bg-white/10 light:bg-white/80 backdrop-blur-xl border-white/20 light:border-gray-200 hover:bg-white/15 dark:hover:bg-white/15 light:hover:bg-white/90 transition-all duration-300 h-full">
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${category.color} mb-4 flex items-center justify-center`}>
                   <category.icon className="w-8 h-8 text-white" />
                 </div>
@@ -155,7 +155,7 @@ const Skills = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="p-6 bg-white/10 dark:bg-white/10 light:bg-white backdrop-blur-xl border-white/20 hover:bg-white/15 dark:hover:bg-white/15 light:hover:bg-gray-50 transition-all duration-300">
+                <Card className="p-6 bg-white/10 dark:bg-white/10 light:bg-white/80 backdrop-blur-xl border-white/20 light:border-gray-200 hover:bg-white/15 dark:hover:bg-white/15 light:hover:bg-white/90 transition-all duration-300">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-3">
                       <span className="text-2xl">{language.flag}</span>
@@ -187,7 +187,7 @@ const Skills = () => {
         >
           <h3 className="text-3xl font-bold text-white dark:text-white light:text-gray-900 mb-8">Certifications</h3>
           
-          <Card className="w-full p-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 dark:bg-gradient-to-r dark:from-yellow-500/10 dark:to-orange-500/10 light:bg-white backdrop-blur-xl border-yellow-400/30 h-32 relative">
+          <Card className="w-full p-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 dark:bg-gradient-to-r dark:from-yellow-500/10 dark:to-orange-500/10 light:bg-gradient-to-r light:from-yellow-100 light:to-orange-100 backdrop-blur-xl border-yellow-400/30 light:border-yellow-300 h-32 relative">
             <Badge className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white border-0 px-3 py-1">
               Achieved
             </Badge>
@@ -200,7 +200,7 @@ const Skills = () => {
                   <h4 className="text-xl font-bold text-white dark:text-white light:text-gray-900">
                     AWS Certified AI Practitioner
                   </h4>
-                  <p className="text-yellow-200 dark:text-yellow-200 light:text-yellow-600 font-medium">June 2025</p>
+                  <p className="text-yellow-200 dark:text-yellow-200 light:text-yellow-700 font-medium">June 2025</p>
                   <p className="text-white/80 dark:text-white/80 light:text-gray-600 text-sm">
                     Advanced certification in cloud computing and AI services
                   </p>
@@ -208,7 +208,7 @@ const Skills = () => {
               </div>
               <Button 
                 variant="outline" 
-                className="border-2 border-yellow-400/50 text-yellow-400 hover:bg-yellow-400/20 px-4 py-2 rounded-lg font-semibold backdrop-blur-xl bg-white/10 transition-all duration-300 flex items-center space-x-2"
+                className="border-2 border-yellow-400/50 light:border-yellow-600/70 text-yellow-400 light:text-yellow-700 hover:bg-yellow-400/20 light:hover:bg-yellow-200/50 px-4 py-2 rounded-lg font-semibold backdrop-blur-xl bg-white/10 light:bg-white/30 transition-all duration-300 flex items-center space-x-2"
                 onClick={() => window.open('https://www.credly.com/users/johan-lael-kapnang-ketcheuzeu', '_blank')}
               >
                 <span>View Badge on Credly</span>

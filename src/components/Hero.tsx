@@ -18,8 +18,11 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
       {/* AI/Cloud background image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`
+        backgroundImage: `url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`
       }} />
+      
+      {/* Dark overlay for better text contrast */}
+      <div className="absolute inset-0 bg-black/40" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -119,9 +122,9 @@ const Hero = () => {
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ delay: 0.8 }} 
-          className="max-w-xl mx-auto mt-12 text-center"
+          className="max-w-lg mx-auto mt-12 text-center"
         >
-          <blockquote className="text-sm md:text-base italic text-white/95 border-l-4 border-blue-400 pl-4 py-2 bg-white/5 backdrop-blur-sm rounded-r-lg border border-white/10">
+          <blockquote className="text-xs md:text-sm italic text-white/95 border-l-4 border-blue-400 pl-4 py-2 bg-white/5 backdrop-blur-sm rounded-r-lg border border-white/10">
             "Artificial Intelligence is not just a tool — it's the reflection of our deepest curiosity, 
             the extension of our imagination, and the spark that will illuminate the future we dare to dream."
             <footer className="mt-2 text-blue-300 not-italic text-xs">- Johan Lael</footer>

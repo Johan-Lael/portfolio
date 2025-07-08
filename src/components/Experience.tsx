@@ -12,7 +12,7 @@ const Experience = () => {
       period: 'Sep 2024 – May 2025',
       location: 'Texas, USA',
       responsibilities: [
-        'Teaching programming concepts to undergraduate students',
+        'Facilitated student comprehension of fundamental programming concepts, enhancing academic performance',
         'Mentoring students in computer science fundamentals',
         'Session planning and curriculum development',
         'Collaborative learning facilitation'

@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Cloud, Code, Settings, Users, ExternalLink } from 'lucide-react';
 
 const Skills = () => {
@@ -185,7 +187,10 @@ const Skills = () => {
         >
           <h3 className="text-3xl font-bold text-white dark:text-white light:text-gray-900 mb-8">Certifications</h3>
           
-          <Card className="w-full p-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 dark:bg-gradient-to-r dark:from-yellow-500/10 dark:to-orange-500/10 light:bg-white backdrop-blur-xl border-yellow-400/30 h-32">
+          <Card className="w-full p-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 dark:bg-gradient-to-r dark:from-yellow-500/10 dark:to-orange-500/10 light:bg-white backdrop-blur-xl border-yellow-400/30 h-32 relative">
+            <Badge className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white border-0 px-3 py-1">
+              Achieved
+            </Badge>
             <div className="flex items-center justify-between h-full">
               <div className="flex items-center space-x-6">
                 <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center flex-shrink-0">
@@ -195,7 +200,7 @@ const Skills = () => {
                   <h4 className="text-xl font-bold text-white dark:text-white light:text-gray-900">
                     AWS Certified AI Practitioner
                   </h4>
-                  <p className="text-yellow-200 dark:text-yellow-200 light:text-yellow-600 font-medium">Achieved June 2025</p>
+                  <p className="text-yellow-200 dark:text-yellow-200 light:text-yellow-600 font-medium">June 2025</p>
                   <p className="text-white/80 dark:text-white/80 light:text-gray-600 text-sm">
                     Advanced certification in cloud computing and AI services
                   </p>

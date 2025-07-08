@@ -45,7 +45,7 @@ const Hero = () => {
               </p>
 
               <p className="text-base md:text-lg text-white/90 leading-relaxed">
-                Exploring the frontiers of AI and Cloud Innovation
+                Exploring the world of AI and Cloud Innovation
                 <br />
                 <span className="text-purple-200">Texas, USA</span>
               </p>

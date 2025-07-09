@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Wrench, Bot, Globe } from 'lucide-react';
@@ -13,7 +12,8 @@ const Portfolio = () => {
       github: 'https://github.com/Johan-Lael/Phone-Holder',
       category: 'Hardware Design',
       color: 'from-blue-500 to-cyan-500',
-      technologies: ['SolidWorks', 'Mechanical Design', '3D Modeling']
+      technologies: ['SolidWorks', 'Mechanical Design', '3D Modeling'],
+      image: 'https://i.postimg.cc/k5ZqYXqL/image.png'
     },
     {
       title: 'Drone Project',
@@ -21,7 +21,8 @@ const Portfolio = () => {
       github: 'https://github.com/Johan-Lael/Drone-Project',
       category: 'Engineering',
       color: 'from-green-500 to-blue-500',
-      technologies: ['Embedded Systems', 'Flight Control', 'Hardware Integration']
+      technologies: ['Embedded Systems', 'Flight Control', 'Hardware Integration'],
+      image: 'https://i.postimg.cc/d3DbVtvt/how-810x536.webp'
     },
     {
       title: 'Movie Manager GUI',
@@ -29,7 +30,8 @@ const Portfolio = () => {
       github: 'https://github.com/Johan-Lael/GUI-Movie-manager',
       category: 'Software Development',
       color: 'from-purple-500 to-pink-500',
-      technologies: ['Java', 'GUI Development', 'Database Management']
+      technologies: ['Java', 'GUI Development', 'Database Management'],
+      image: 'https://i.postimg.cc/fb4JkK0V/OIP.jpg'
     }
   ];
 
@@ -95,11 +97,13 @@ const Portfolio = () => {
               viewport={{ once: true }}
             >
               <Card className="p-6 bg-white/5 backdrop-blur-xl border-white/10 hover:bg-white/10 transition-all duration-500 h-full group hover:scale-105">
-                {/* Project Header */}
-                <div className={`w-full h-32 rounded-lg bg-gradient-to-r ${project.color} mb-6 flex items-center justify-center`}>
-                  <div className="text-4xl font-bold text-white opacity-80">
-                    {project.title.charAt(0)}
-                  </div>
+                {/* Project Image */}
+                <div className="w-full h-32 rounded-lg mb-6 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={`${project.title} Preview`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Category Badge */}
@@ -155,7 +159,6 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Services Section */}
         <div className="mt-20">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

@@ -67,10 +67,12 @@ const About = () => {
           >
             {/* Profile Picture */}
             <div className="flex justify-center md:justify-start">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-xl border-4 border-white/20 light:border-gray-300 flex items-center justify-center">
-                <div className="w-72 h-72 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-20 flex items-center justify-center">
-                  <span className="text-6xl text-white/80 dark:text-white/80 light:text-gray-600">JL</span>
-                </div>
+              <div className="w-80 h-80 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-xl border-4 border-white/20 light:border-gray-300 flex items-center justify-center p-2 overflow-hidden">
+                <img 
+                  src="https://i.postimg.cc/sgbZ7zbD/IMG-4688-1.jpg" 
+                  alt="Johan Lael About Picture" 
+                  className="w-full h-full rounded-full object-cover"
+                />
               </div>
             </div>
 

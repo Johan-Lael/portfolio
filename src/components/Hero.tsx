@@ -109,10 +109,12 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }} 
             className="flex justify-center md:justify-end"
           >
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-white/10 dark:bg-white/10 light:bg-white/20 backdrop-blur-xl border-2 border-white/20 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-gradient-to-r from-blue-500/80 to-purple-600/80 backdrop-blur-sm flex items-center justify-center text-5xl md:text-6xl font-bold text-white shadow-inner">
-                JL
-              </div>
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-white/10 dark:bg-white/10 light:bg-white/20 backdrop-blur-xl border-2 border-white/20 p-1 shadow-2xl overflow-hidden">
+              <img 
+                src="https://i.postimg.cc/bvbSRMj0/IMG-3908-1.jpg" 
+                alt="Johan Lael Profile Picture" 
+                className="w-full h-full rounded-full object-cover"
+              />
             </div>
           </motion.div>
         </div>

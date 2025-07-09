@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,15 +15,41 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'service_syyui5s',
+        'template_3b8jue4',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          reply_to: formData.email,
+        },
+        'S3npxsDuNdSVdwj1r'
+      );
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -42,8 +69,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'johan.kapnang@example.com',
-      href: 'mailto:johan.kapnang@example.com'
+      value: 'johan.ketcheuzeu@outlook.com',
+      href: 'mailto:johan.ketcheuzeu@outlook.com'
     },
     {
       icon: Github,
@@ -109,6 +136,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     className="bg-white/10 dark:bg-white/10 light:bg-white border-white/30 dark:border-white/30 light:border-gray-300 text-white dark:text-white light:text-gray-900 placeholder:text-white/60 dark:placeholder:text-white/60 light:placeholder:text-gray-400 focus:border-blue-400 focus:bg-white/15 dark:focus:bg-white/15 light:focus:bg-white"
                     placeholder="Your name"
                   />
@@ -125,6 +153,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     className="bg-white/10 dark:bg-white/10 light:bg-white border-white/30 dark:border-white/30 light:border-gray-300 text-white dark:text-white light:text-gray-900 placeholder:text-white/60 dark:placeholder:text-white/60 light:placeholder:text-gray-400 focus:border-blue-400 focus:bg-white/15 dark:focus:bg-white/15 light:focus:bg-white"
                     placeholder="your.email@example.com"
                   />
@@ -140,6 +169,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     rows={5}
                     className="bg-white/10 dark:bg-white/10 light:bg-white border-white/30 dark:border-white/30 light:border-gray-300 text-white dark:text-white light:text-gray-900 placeholder:text-white/60 dark:placeholder:text-white/60 light:placeholder:text-gray-400 focus:border-blue-400 focus:bg-white/15 dark:focus:bg-white/15 light:focus:bg-white resize-none"
                     placeholder="Tell me about your project or say hello..."
@@ -148,9 +178,10 @@ const Contact = () => {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </Card>

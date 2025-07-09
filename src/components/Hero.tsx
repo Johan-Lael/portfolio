@@ -92,7 +92,7 @@ const Hero = () => {
                 <Linkedin className="w-5 h-5" />
               </motion.a>
               <motion.a 
-                href="mailto:johan.kapnang@example.com" 
+                href="mailto:johan.ketcheuzeu@outlook.com" 
                 className="p-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg" 
                 whileHover={{ scale: 1.1, rotate: 5 }} 
                 whileTap={{ scale: 0.9 }}

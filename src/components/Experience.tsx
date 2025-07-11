@@ -147,7 +147,7 @@ const Experience = () => {
                     <img 
                       src="https://i.postimg.cc/zXbzWhNK/Screenshot-2025-07-09-122535.png" 
                       alt="Resume Preview" 
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-full object-cover object-top rounded-lg"
                     />
                   </div>
                 </div>

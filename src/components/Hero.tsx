@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
@@ -15,7 +14,12 @@ const Hero = () => {
   };
 
   const downloadResume = () => {
-    window.open('https://1drv.ms/b/c/9f3d05da809a5183/EdbUHN62rrpDgsvW0j0A-lgBIBqEeWU_HbAz7HTuNjuefQ?e=H4Z92Y', '_blank');
+    const link = document.createElement('a');
+    link.href = 'https://1drv.ms/b/c/9f3d05da809a5183/EdbUHN62rrpDgsvW0j0A-lgBIBqEeWU_HbAz7HTuNjuefQ?e=H4Z92Y&download=1';
+    link.download = 'Johan_Lael_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (

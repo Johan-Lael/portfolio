@@ -14,6 +14,10 @@ const Hero = () => {
     }
   };
 
+  const downloadResume = () => {
+    window.open('https://1drv.ms/b/c/9f3d05da809a5183/EdbUHN62rrpDgsvW0j0A-lgBIBqEeWU_HbAz7HTuNjuefQ?e=H4Z92Y', '_blank');
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
       {/* AI/Cloud background image */}
@@ -62,6 +66,7 @@ const Hero = () => {
                 Contact Me
               </Button>
               <Button 
+                onClick={downloadResume}
                 variant="outline" 
                 className="border-2 border-green-400/50 text-green-400 hover:bg-green-400/20 px-6 py-2 rounded-full text-base font-semibold backdrop-blur-xl bg-white/10 transition-all duration-300 transform hover:scale-105"
               >

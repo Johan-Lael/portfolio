@@ -28,6 +28,10 @@ const Experience = () => {
     color: 'from-purple-500 to-pink-500'
   }];
 
+  const downloadResume = () => {
+    window.open('https://1drv.ms/b/c/9f3d05da809a5183/EdbUHN62rrpDgsvW0j0A-lgBIBqEeWU_HbAz7HTuNjuefQ?e=H4Z92Y', '_blank');
+  };
+
   return (
     <section id="experience" className="py-20 relative" style={{
       backgroundImage: `url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')`,
@@ -160,7 +164,10 @@ const Experience = () => {
                   Get a comprehensive overview of my experience, skills, and achievements. 
                   Perfect for opportunities in AI, cloud computing, and software development.
                 </p>
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                <Button 
+                  onClick={downloadResume}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                >
                   <Download className="w-5 h-5 mr-2" />
                   Download Resume
                 </Button>

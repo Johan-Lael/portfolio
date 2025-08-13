@@ -228,8 +228,8 @@ const Skills = () => {
               </Badge>
               <div className="flex items-center h-full">
                 <div className="flex items-center space-x-6">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
-                    <img src={veeamSalesImage} alt="Veeam Sales Professional" className="w-full h-full object-cover" />
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden bg-white">
+                    <img src={veeamSalesImage} alt="Veeam Sales Professional" className="w-full h-full object-contain" />
                   </div>
                   <div className="text-left space-y-2">
                     <h4 className="text-xl font-bold text-white dark:text-white light:text-gray-900">
@@ -251,8 +251,8 @@ const Skills = () => {
               </Badge>
               <div className="flex items-center h-full">
                 <div className="flex items-center space-x-6">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
-                    <img src={veeamTechnicalImage} alt="Veeam Technical Sales Professional" className="w-full h-full object-cover" />
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden bg-white">
+                    <img src={veeamTechnicalImage} alt="Veeam Technical Sales Professional" className="w-full h-full object-contain" />
                   </div>
                   <div className="text-left space-y-2">
                     <h4 className="text-xl font-bold text-white dark:text-white light:text-gray-900">

@@ -31,7 +31,7 @@ const Experience = () => {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = 'https://www.dropbox.com/scl/fi/8n5woo151yvl8mkib9yde/JOHAN-LAEL_KAPNANG-KETCHEUZEU_Resume.pdf?rlkey=tu7firlvtppi1m34j59wnqt6m&st=71mmuf9l&dl=1';
+    link.href = 'https://www.dropbox.com/scl/fi/8n5woo151yvl8mkib9yde/JOHAN-LAEL_KAPNANG-KETCHEUZEU_Resume.pdf?rlkey=tu7firlvtppi1m34j59wnqt6m&st=837b6p4d&dl=1';
     link.download = 'Johan_Lael_Resume.pdf';
     document.body.appendChild(link);
     link.click();

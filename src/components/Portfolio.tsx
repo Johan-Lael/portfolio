@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Github, Wrench, Bot, Globe } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import phoneHolderImg from '@/assets/phone-holder.jpg';
 
 const Portfolio = () => {
   const projects = [
@@ -13,7 +14,12 @@ const Portfolio = () => {
       category: 'Hardware Design',
       color: 'from-blue-500 to-cyan-500',
       technologies: ['SolidWorks', 'Mechanical Design', '3D Modeling'],
-      image: 'https://i.postimg.cc/k5ZqYXqL/image.png'
+      image: phoneHolderImg,
+      keyFeatures: [
+        'Ergonomic adjustable design for optimal viewing angles',
+        'Precision-engineered components using advanced CAD modeling',
+        'Universal compatibility with multiple device sizes'
+      ]
     },
     {
       title: 'Drone Project',
@@ -22,7 +28,12 @@ const Portfolio = () => {
       category: 'Engineering',
       color: 'from-green-500 to-blue-500',
       technologies: ['Embedded Systems', 'Flight Control', 'Hardware Integration'],
-      image: 'https://i.postimg.cc/d3DbVtvt/how-810x536.webp'
+      image: 'https://i.postimg.cc/d3DbVtvt/how-810x536.webp',
+      keyFeatures: [
+        'Autonomous flight control system with real-time stabilization',
+        'Custom-built flight controller with sensor integration',
+        'Modular design allowing for easy maintenance and upgrades'
+      ]
     },
     {
       title: 'Movie Manager GUI',
@@ -31,7 +42,12 @@ const Portfolio = () => {
       category: 'Software Development',
       color: 'from-purple-500 to-pink-500',
       technologies: ['Java', 'GUI Development', 'Database Management'],
-      image: 'https://i.postimg.cc/fb4JkK0V/OIP.jpg'
+      image: 'https://i.postimg.cc/fb4JkK0V/OIP.jpg',
+      keyFeatures: [
+        'Intuitive Netflix-style interface for browsing movie collections',
+        'Advanced search and filter capabilities with multiple criteria',
+        'Persistent database storage for managing large media libraries'
+      ]
     }
   ];
 
@@ -122,6 +138,16 @@ const Portfolio = () => {
                   <p className="text-white/70 text-sm leading-relaxed">
                     {project.description}
                   </p>
+
+                  {/* Key Features */}
+                  <div className="space-y-2 mb-4">
+                    {project.keyFeatures.map((feature, idx) => (
+                      <div key={idx} className="flex items-start space-x-2">
+                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${project.color} mt-1.5 flex-shrink-0`}></div>
+                        <span className="text-white/60 text-xs leading-relaxed">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2">
